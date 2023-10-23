@@ -1,16 +1,14 @@
 import { Stack, useRouter } from "expo-router";
 import { StyleSheet, Text, View, Button, Platform, FlatList, Image } from "react-native";
 import { useState, useEffect } from "react"; //vi skal bruge state til at håndtere posts
+import MapView from 'react-native-maps'
 
 
-export default function Posts() {
+export default function Map() {
     const [posts, setPosts] = useState([]);
     const router = useRouter();
 
     const API_URL = "https://expo-post-app-49c88-default-rtdb.europe-west1.firebasedatabase.app";
-    //https://expo-post-app-49c88-default-rtdb.europe-west1.firebasedatabase.app/
-    //https://post-rest-api-default-rtdb.firebaseio.com
-    //const API_URL = "https://{your-firebase-db-name}.firebaseio.com";
 
     useEffect(() => {
         getPosts();
